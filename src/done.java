@@ -10,6 +10,8 @@ public class done {
 //    6a done
 //    7a done
 //    8a done
+//    3a not done
+//    8b not done
 
 
 
@@ -19,7 +21,7 @@ public class done {
 
 //    2b not done
 
-//    3a not done
+
 
 //    4b not done
 
@@ -27,5 +29,5 @@ public class done {
 
 //    7b not done
 
-//    8b not done
+
 }

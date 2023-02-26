@@ -1,28 +1,34 @@
+// 8 b
 
-    public class FindKthMissingEvenNumber {
+import java.util.HashSet;
+import java.util.Set;
 
-        public static void main(String[] args) {
-            int[] arr = {0, 2, 6,18, 22};
-            int k = 6;
-            int result = findKthMissingEvenNumber(arr, k);
-            System.out.println("The " + k + "th missing even number from the array is: " + result);
+public class FindKthMissingEvenNumber {
+    public static int findKthMissingEvenNumber(int[] a, int k) {
+        int check = 0;
+        int n = a.length;
+        int max = a[n-1];
+        int i = 0;
+        int ans = 0;
+
+        Set<Integer> present = new HashSet<>();
+        for (int cur: a) {
+            present.add(cur);
         }
-
-        public static int findKthMissingEvenNumber(int[] arr, int k) {
-            int count = 0;
-            int prev = -2;
-            for (int i = 0; i < arr.length; i++) {
-                int diff = arr[i] - prev;
-                if (diff > 2) { // there is a missing even number(s) between prev and arr[i]
-                    count += diff / 2 - 1;
-                    if (count >= k) {
-                        return prev + k - (count - diff / 2 + 1) * 2;
-                    }
-                }
-                prev = arr[i];
+        while (k > 0) {
+            if (!present.contains(check)) {
+                ans = check;
+                k -= 1;
             }
-            // handle the case where k is greater than the total number of missing even numbers
-            return arr[arr.length - 1] + (k - count) * 2;
+            check += 2;
         }
+        return ans;
     }
 
+    public static void main(String[] args) {
+        int[] a = {0, 2, 6, 18, 22};
+        int k = 6;
+        int kthMissingEvenNumber = findKthMissingEvenNumber(a, k);
+        System.out.println("Kth missing even number: " + kthMissingEvenNumber);
+    }
+}
