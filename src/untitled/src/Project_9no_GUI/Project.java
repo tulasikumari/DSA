@@ -1,6 +1,4 @@
-package untitled.src.Project_9no_GUI;
-
-import Project_9no_GUI.Scheduling_Job;
+package Project_9no_GUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

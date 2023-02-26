@@ -1,4 +1,4 @@
-package untitled.src.Project_9no_GUI;
+package Project_9no_GUI;
 
 import javax.swing.*;
 import java.awt.*;
